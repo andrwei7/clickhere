@@ -1,0 +1,91 @@
+  * {
+    overflow: hidden;
+  }
+  
+  html{
+    font-family: Poppins sa;
+    color: #f0f0f0;
+    
+  }
+  body{
+    min-height: 100vh;
+    background: wheat;
+    color: #a2a5b3;
+    align-content: center;
+  }
+  h1{
+  
+      font-family: monospace;
+      font-size: 4em;
+      animation: color-change 2s infinite;
+      
+  } 
+    
+    @keyframes color-change {
+      0% { color: red; }
+      50% { color: blue; }
+      100% { color: red; }
+    }
+  
+  .card{
+    margin: 0 auto;
+    padding: 1em;
+    width: 300px;
+    background: #1c1f2b;
+    text-align: center;
+    border-radius: 50px;
+    position: relative;
+    opacity: .9;
+
+  }
+  .p a {
+    color: green;
+    font-size: 1em;
+  }
+  @property --angle{
+    syntax: "<angle>";
+    initial-value: 0deg;
+    inherits: false;
+  }
+  
+  .card::after, .card::before{
+    content: '';
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    opacity: .5;
+    top: 50%;
+    left: 50%;
+    translate: -50% -50%;
+    z-index: -1;
+    padding: 3px;
+    border-radius: 10px;
+    animation: 3s spin linear infinite;
+    transition: opacity 1s ease-in-out;
+  }
+  .card::before{
+    filter: blur(1.5rem);
+    opacity: 0.5;
+  }
+  @keyframes spin{
+    from{
+      --angle: 0deg;
+    }
+    to{
+      --angle: 360deg;
+    }
+  }
+  .background-video{
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    z-index: -1;
+    flex-wrap: wrap;
+  }
+
+  .mare a {
+    font-size: 1.2rem;
+    margin: 10px;
+    color: gray
+  }
+ 
